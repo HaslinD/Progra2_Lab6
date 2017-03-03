@@ -8,6 +8,12 @@ public class Gatos extends ArticulosV{
         super();
     }
 
+    public Gatos(double peso, double altura, double precio) {
+        super(precio);
+        this.peso = peso;
+        this.altura = altura;
+    }
+
     public double getPeso() {
         return peso;
     }
