@@ -133,11 +133,34 @@ public class MainSource extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jt_Familiares = new javax.swing.JTree();
         TablaDeObjetos = new javax.swing.JDialog();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jPanel11 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        TableAll = new javax.swing.JTable();
-        jLabel44 = new javax.swing.JLabel();
+        TablePersonas = new javax.swing.JTable();
+        jPanel12 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TableFams = new javax.swing.JTable();
+        jPanel13 = new javax.swing.JPanel();
+        jTabbedPane5 = new javax.swing.JTabbedPane();
+        jPanel14 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        TableBaleadas = new javax.swing.JTable();
+        jPanel15 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        TableGatos = new javax.swing.JTable();
+        jLabel45 = new javax.swing.JLabel();
         pp_Menu = new javax.swing.JPopupMenu();
         Eliminar = new javax.swing.JMenuItem();
+        pp_MenuArbol = new javax.swing.JPopupMenu();
+        Agregar = new javax.swing.JMenuItem();
+        Modificar = new javax.swing.JMenuItem();
+        Eliminar2 = new javax.swing.JMenuItem();
+        pp_MenuFam = new javax.swing.JPopupMenu();
+        Eliminar3 = new javax.swing.JMenuItem();
+        pp_MenuBal = new javax.swing.JPopupMenu();
+        Eliminar4 = new javax.swing.JMenuItem();
+        pp_MenuGat = new javax.swing.JPopupMenu();
+        Eliminar5 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
@@ -842,6 +865,11 @@ public class MainSource extends javax.swing.JFrame {
 
         treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Raiz");
         jt_Familiares.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jt_Familiares.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_FamiliaresMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jt_Familiares);
 
         javax.swing.GroupLayout ArbolLayout = new javax.swing.GroupLayout(Arbol.getContentPane());
@@ -849,8 +877,8 @@ public class MainSource extends javax.swing.JFrame {
         ArbolLayout.setHorizontalGroup(
             ArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ArbolLayout.createSequentialGroup()
-                .addContainerGap(197, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(191, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
         ArbolLayout.setVerticalGroup(
@@ -861,7 +889,7 @@ public class MainSource extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        TableAll.setModel(new javax.swing.table.DefaultTableModel(
+        TablePersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -869,35 +897,177 @@ public class MainSource extends javax.swing.JFrame {
                 "Nombre", "Edad", "ID", "Nacionalidad"
             }
         ));
-        TableAll.addMouseListener(new java.awt.event.MouseAdapter() {
+        TablePersonas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableAllMouseClicked(evt);
+                TablePersonasMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(TableAll);
+        jScrollPane3.setViewportView(TablePersonas);
 
-        jLabel44.setText("Tabla de Eliminados");
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane4.addTab("Tabla Personas", jPanel11);
+
+        TableFams.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "ID", "Nacionalidad"
+            }
+        ));
+        TableFams.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableFamsMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(TableFams);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane4.addTab("Tabla Familiares", jPanel12);
+
+        TableBaleadas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Edad", "Precio"
+            }
+        ));
+        TableBaleadas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableBaleadasMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(TableBaleadas);
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane5.addTab("Baleadas", jPanel14);
+
+        TableGatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Altura", "Peso", "Precio"
+            }
+        ));
+        TableGatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableGatosMouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(TableGatos);
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane5.addTab("Gatos", jPanel15);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane5)
+                .addContainerGap())
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane5)
+                .addContainerGap())
+        );
+
+        jTabbedPane4.addTab("Tabla Articulos", jPanel13);
+
+        jLabel45.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel45.setText("Tablas De Objetos");
 
         javax.swing.GroupLayout TablaDeObjetosLayout = new javax.swing.GroupLayout(TablaDeObjetos.getContentPane());
         TablaDeObjetos.getContentPane().setLayout(TablaDeObjetosLayout);
         TablaDeObjetosLayout.setHorizontalGroup(
             TablaDeObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TablaDeObjetosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(TablaDeObjetosLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel44)
+                .addGroup(TablaDeObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TablaDeObjetosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TablaDeObjetosLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel45)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         TablaDeObjetosLayout.setVerticalGroup(
             TablaDeObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TablaDeObjetosLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jLabel44)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -908,6 +1078,39 @@ public class MainSource extends javax.swing.JFrame {
             }
         });
         pp_Menu.add(Eliminar);
+
+        Agregar.setText("Agregar");
+        pp_MenuArbol.add(Agregar);
+
+        Modificar.setText("Modificar");
+        pp_MenuArbol.add(Modificar);
+
+        Eliminar2.setText("Eliminar");
+        pp_MenuArbol.add(Eliminar2);
+
+        Eliminar3.setText("Eliminar");
+        Eliminar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar3ActionPerformed(evt);
+            }
+        });
+        pp_MenuFam.add(Eliminar3);
+
+        Eliminar4.setText("Eliminar");
+        Eliminar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar4ActionPerformed(evt);
+            }
+        });
+        pp_MenuBal.add(Eliminar4);
+
+        Eliminar5.setText("Eliminar");
+        Eliminar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar5ActionPerformed(evt);
+            }
+        });
+        pp_MenuGat.add(Eliminar5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1089,10 +1292,10 @@ public class MainSource extends javax.swing.JFrame {
             estado = cb_Estado.getSelectedItem().toString();
             sueldo = Double.parseDouble(tf_Sueldo.getText());
             
-            DefaultTableModel modelo = (DefaultTableModel) TableAll.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) TablePersonas.getModel();
             Object[] newrow = {nombre, edad, id, nacionalidad};
             modelo.addRow(newrow);
-            TableAll.setModel(modelo);
+            TablePersonas.setModel(modelo);
             
             DefaultTreeModel m = (DefaultTreeModel) jt_Todo.getModel();
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
@@ -1129,10 +1332,10 @@ public class MainSource extends javax.swing.JFrame {
             clientesAtt = 0;
             ganancia = 0.0;
             
-            DefaultTableModel modelo = (DefaultTableModel) TableAll.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) TablePersonas.getModel();
             Object[] newrow = {nombre, edad, id, nacionalidad};
             modelo.addRow(newrow);
-            TableAll.setModel(modelo);
+            TablePersonas.setModel(modelo);
             
             DefaultTreeModel m = (DefaultTreeModel) jt_Todo.getModel();
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
@@ -1168,10 +1371,10 @@ public class MainSource extends javax.swing.JFrame {
             ticket = Integer.parseInt(tf_ticket.getText());
             dinero = Double.parseDouble(tf_dinero.getText());
             
-            DefaultTableModel modelo = (DefaultTableModel) TableAll.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) TablePersonas.getModel();
             Object[] newrow = {nombre, edad, id, nacionalidad};
             modelo.addRow(newrow);
-            TableAll.setModel(modelo);
+            TablePersonas.setModel(modelo);
             
             DefaultTreeModel m = (DefaultTreeModel) jt_Todo.getModel();
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
@@ -1201,7 +1404,12 @@ public class MainSource extends javax.swing.JFrame {
             precio = Integer.parseInt(tf_Precio.getText());
             ingredientes = tf_ingrecientes.getText();
             
-            lista2.add(new Baleadas(precio));
+            DefaultTableModel modelo = (DefaultTableModel) TableBaleadas.getModel();
+            Object[] newrow = {ingredientes, precio};
+            modelo.addRow(newrow);
+            TableBaleadas.setModel(modelo);
+            
+            Baleadas.add(new Baleadas(precio));
             b.setIngredientes(ingredientes);
         } catch (Exception e) {
         }
@@ -1214,7 +1422,12 @@ public class MainSource extends javax.swing.JFrame {
             altura = Double.parseDouble(tf_altura.getText());
             peso = Double.parseDouble(tf_peso.getText());
             
-            lista2.add(new Gatos(peso, altura, precio));
+            DefaultTableModel modelo = (DefaultTableModel) TableGatos.getModel();
+            Object[] newrow = {altura, peso, precio};
+            modelo.addRow(newrow);
+            TableGatos.setModel(modelo);
+            
+            Gatos.add(new Gatos(peso, altura, precio));
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -1233,18 +1446,63 @@ public class MainSource extends javax.swing.JFrame {
         this.Principal.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void TableAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableAllMouseClicked
+    private void TablePersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePersonasMouseClicked
         if (evt.isMetaDown()) {
             pp_Menu.show(evt.getComponent(), evt.getX(), evt.getY());
         }
-    }//GEN-LAST:event_TableAllMouseClicked
+    }//GEN-LAST:event_TablePersonasMouseClicked
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        DefaultTableModel modelo = (DefaultTableModel) TableAll.getModel();
-        modelo.removeRow(TableAll.getSelectedRow());
-        lista.remove(TableAll.getSelectedRowCount());
-        TableAll.setModel(modelo);
+        DefaultTableModel modelo = (DefaultTableModel) TablePersonas.getModel();
+        modelo.removeRow(TablePersonas.getSelectedRow());
+        lista.remove(TablePersonas.getSelectedRowCount());
+        TablePersonas.setModel(modelo);
     }//GEN-LAST:event_EliminarActionPerformed
+
+    private void jt_FamiliaresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_FamiliaresMouseClicked
+        if (evt.isMetaDown()) {
+            pp_MenuArbol.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jt_FamiliaresMouseClicked
+
+    private void TableFamsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableFamsMouseClicked
+        if (evt.isMetaDown()) {
+            pp_MenuFam.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_TableFamsMouseClicked
+
+    private void TableBaleadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableBaleadasMouseClicked
+        if (evt.isMetaDown()) {
+            pp_MenuBal.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_TableBaleadasMouseClicked
+
+    private void TableGatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableGatosMouseClicked
+        if (evt.isMetaDown()) {
+            pp_MenuGat.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_TableGatosMouseClicked
+
+    private void Eliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar3ActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) TableFams.getModel();
+        modelo.removeRow(TableFams.getSelectedRow());
+        Familiares.remove(TableFams.getSelectedRowCount());
+        TableFams.setModel(modelo);
+    }//GEN-LAST:event_Eliminar3ActionPerformed
+
+    private void Eliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar4ActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) TableBaleadas.getModel();
+        modelo.removeRow(TableBaleadas.getSelectedRow());
+        Baleadas.remove(TableBaleadas.getSelectedRowCount());
+        TableBaleadas.setModel(modelo);
+    }//GEN-LAST:event_Eliminar4ActionPerformed
+
+    private void Eliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar5ActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) TableGatos.getModel();
+        modelo.removeRow(TableGatos.getSelectedRow());
+        Gatos.remove(TableGatos.getSelectedRowCount());
+        TableGatos.setModel(modelo);
+    }//GEN-LAST:event_Eliminar5ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1279,12 +1537,21 @@ public class MainSource extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Agregar;
     private javax.swing.JDialog AgregarTodo;
     private javax.swing.JDialog Arbol;
     private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JMenuItem Eliminar2;
+    private javax.swing.JMenuItem Eliminar3;
+    private javax.swing.JMenuItem Eliminar4;
+    private javax.swing.JMenuItem Eliminar5;
+    private javax.swing.JMenuItem Modificar;
     private javax.swing.JDialog Principal;
     private javax.swing.JDialog TablaDeObjetos;
-    private javax.swing.JTable TableAll;
+    private javax.swing.JTable TableBaleadas;
+    private javax.swing.JTable TableFams;
+    private javax.swing.JTable TableGatos;
+    private javax.swing.JTable TablePersonas;
     private javax.swing.JButton botonColor;
     private javax.swing.JButton botonColor1;
     private javax.swing.JButton botonColor2;
@@ -1344,7 +1611,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1358,6 +1625,11 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1369,12 +1641,21 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTree jt_Familiares;
     private javax.swing.JTree jt_Todo;
     private javax.swing.JPopupMenu pp_Menu;
+    private javax.swing.JPopupMenu pp_MenuArbol;
+    private javax.swing.JPopupMenu pp_MenuBal;
+    private javax.swing.JPopupMenu pp_MenuFam;
+    private javax.swing.JPopupMenu pp_MenuGat;
     private javax.swing.JTextField tf_Edad;
     private javax.swing.JTextField tf_Edad1;
     private javax.swing.JTextField tf_Edad2;
@@ -1409,6 +1690,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JTextField tf_ticket;
     // End of variables declaration//GEN-END:variables
     ArrayList lista = new ArrayList();
-    ArrayList lista2 = new ArrayList();
+    ArrayList Baleadas = new ArrayList();
+    ArrayList Gatos = new ArrayList();
     ArrayList Familiares = new ArrayList();
 }
