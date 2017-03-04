@@ -1264,6 +1264,11 @@ public class MainSource extends javax.swing.JFrame {
             nombre = tf_Nombre.getText();
             colorpiel = botonColor.getBackground();
             
+            DefaultTableModel modelo = (DefaultTableModel) TableFams.getModel();
+            Object[] newrow = {nombre, edad, id, nacionalidad};
+            modelo.addRow(newrow);
+            TableFams.setModel(modelo);
+            
             Familiares.add(new Familiar(edad, id, nacionalidad, lugar_nacimiento, nombre, colorpiel, new Familiar()));
         } catch (Exception e) {
         }
