@@ -94,11 +94,13 @@ public class Familiar {
     public void sethijos(Familiar h){
         lista_hijos.add(h);
     }
-    
+
     @Override
     public String toString() {
-        return nombre;
+        return nombre + ", " + id + ", " + nacionalidad + ", " + lugar_nacimiento + ", " + edad + ", " + color_piel;
     }
+    
+    
     
     
 }

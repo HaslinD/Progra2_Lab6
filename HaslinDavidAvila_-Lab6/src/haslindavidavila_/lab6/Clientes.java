@@ -46,11 +46,13 @@ public class Clientes extends Persona{
     public void ordenes(Ordenes o){
         lista_ordenes.add(o);
     }
-    
+
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() + ", " + ticket + ", " + dinero;
     }
+    
+    
     
     
 }

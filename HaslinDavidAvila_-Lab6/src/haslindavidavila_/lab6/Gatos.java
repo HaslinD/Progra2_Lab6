@@ -32,7 +32,7 @@ public class Gatos extends ArticulosV{
 
     @Override
     public String toString() {
-        return super.toString() + "peso=" + peso + ", altura=" + altura;
+        return super.toString() + ", " + peso + ", " + altura;
     }
     
     

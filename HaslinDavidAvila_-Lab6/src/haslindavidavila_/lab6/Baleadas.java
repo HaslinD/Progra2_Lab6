@@ -19,7 +19,7 @@ public class Baleadas extends ArticulosV {
     
     @Override
     public String toString() {
-        return super.toString()+ "ingredientes=" + ingredientes;
+        return super.toString()+ ", " + ingredientes;
     }
     
     

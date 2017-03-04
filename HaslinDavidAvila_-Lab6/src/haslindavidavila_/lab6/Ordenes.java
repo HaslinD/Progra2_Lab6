@@ -30,7 +30,7 @@ public class Ordenes {
 
     @Override
     public String toString() {
-        return "cantidad=" + cantidad + ", atendedor=" + atendedor;
+        return  cantidad + ", " + atendedor;
     }
 
     
