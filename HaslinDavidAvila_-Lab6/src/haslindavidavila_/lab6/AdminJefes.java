@@ -94,7 +94,7 @@ public class AdminJefes {
                 no = sc.next();
                 color = Color.WHITE;
                 
-                listaJefes.add(new Jefes(st, ca, ganancia, ed, id, na, ln, no, null, color, null));
+                listaJefes.add(new Jefes(st, ca, ganancia, ed, id, na, ln, no, null, color));
             }
         } catch (Exception e) {
         } finally {

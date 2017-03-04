@@ -1,6 +1,7 @@
 package haslindavidavila_.lab6;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.tree.DefaultTreeModel;
 
 public class Persona {
@@ -11,12 +12,12 @@ public class Persona {
     private String nombre;
     private DefaultTreeModel arbol_genealogico;
     private Color Color_piel;
-    private Familiar familiar;
+    private ArrayList<Familiar> familiar = new ArrayList();
 
     public Persona() {
     }
 
-    public Persona(int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, DefaultTreeModel arbol_genealogico, Color Color_piel, Familiar familiar) {
+    public Persona(int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, DefaultTreeModel arbol_genealogico, Color Color_piel) {
         this.edad = edad;
         this.id = id;
         this.nacionalidad = nacionalidad;
@@ -24,7 +25,6 @@ public class Persona {
         this.nombre = nombre;
         this.arbol_genealogico = arbol_genealogico;
         this.Color_piel = Color_piel;
-        this.familiar = familiar;
     }
 
     public int getEdad() {
@@ -83,11 +83,11 @@ public class Persona {
         this.Color_piel = Color_piel;
     }
 
-    public Familiar getFamiliar() {
+    public ArrayList<Familiar> getFamiliar() {
         return familiar;
     }
 
-    public void setFamiliar(Familiar familiar) {
+    public void setFamiliar(ArrayList<Familiar> familiar) {
         this.familiar = familiar;
     }
 

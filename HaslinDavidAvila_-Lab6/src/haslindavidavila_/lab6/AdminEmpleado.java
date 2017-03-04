@@ -62,7 +62,6 @@ public class AdminEmpleado {
                 bw.write(t.getLugar_nacimiento() + ";");
                 bw.write(t.getArbol_genealogico() + ";");
                 bw.write(t.getColor_piel() + ";");
-                bw.write(t.getFamiliar() + ";");
                 bw.write(";");
             }
             bw.flush();
@@ -85,7 +84,6 @@ public class AdminEmpleado {
             while (sc.hasNext()){
                 int id,ed;
                 double sue;
-                Familiar fam;
                 Color color;
                 String st,he,hs,es,na,ln,no;
                 DefaultTreeModel arbol;
@@ -102,9 +100,8 @@ public class AdminEmpleado {
                 no = sc.next();
                 arbol = null;
                 color = Color.WHITE;
-                fam = null;
                 
-                listaEmpleados.add(new Empleado(st, he, hs, sue, es, ed, id, na, ln, no, arbol, color, fam));
+                listaEmpleados.add(new Empleado(st, he, hs, sue, es, ed, id, na, ln, no, arbol, color));
             }
         } catch (Exception e) {
         } finally {

@@ -13,8 +13,8 @@ public class Clientes extends Persona{
         super();
     }
 
-    public Clientes(int ticket, double dinero, int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, DefaultTreeModel arbol_genealogico, Color Color_piel, Familiar familiar) {
-        super(edad, id, nacionalidad, lugar_nacimiento, nombre, arbol_genealogico, Color_piel, familiar);
+    public Clientes(int ticket, double dinero, int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, DefaultTreeModel arbol_genealogico, Color Color_piel) {
+        super(edad, id, nacionalidad, lugar_nacimiento, nombre, arbol_genealogico, Color_piel);
         this.ticket = ticket;
         this.dinero = dinero;
     }

@@ -92,7 +92,7 @@ public class AdminCliente {
                 no = sc.next();
                 color = Color.WHITE;
                 
-                listaCliente.add(new Clientes(ticket, dinero, ed, id, na, ln, no, null, color, null));
+                listaCliente.add(new Clientes(ticket, dinero, ed, id, na, ln, no, null, color));
             }
         } catch (Exception e) {
         } finally {
