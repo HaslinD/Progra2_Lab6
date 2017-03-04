@@ -84,7 +84,10 @@ public class AdminGatos {
             }
         } catch (Exception e) {
         } finally {
-            sc.close();
+            try {
+                sc.close();
+            } catch (Exception e) {
+            }
         }
     }
 }

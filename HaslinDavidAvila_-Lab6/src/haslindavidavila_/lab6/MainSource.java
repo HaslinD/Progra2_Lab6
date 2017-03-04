@@ -1,9 +1,16 @@
 package haslindavidavila_.lab6;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.Document;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -119,8 +126,9 @@ public class MainSource extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         tf_Precio = new javax.swing.JTextField();
-        tf_ingrecientes = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jl_ingredientes = new javax.swing.JList<>();
         jPanel9 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
@@ -161,6 +169,8 @@ public class MainSource extends javax.swing.JFrame {
         Eliminar4 = new javax.swing.JMenuItem();
         pp_MenuGat = new javax.swing.JPopupMenu();
         Eliminar5 = new javax.swing.JMenuItem();
+        pp_MenuIngr = new javax.swing.JPopupMenu();
+        Agregar2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
@@ -480,7 +490,11 @@ public class MainSource extends javax.swing.JFrame {
 
         jLabel28.setText("Clientes Atendidos");
 
+        tf_clientesatt.setEditable(false);
+
         jLabel29.setText("Ganancia");
+
+        tf_Ganancia.setEditable(false);
 
         jButton4.setText("Agregar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -732,6 +746,13 @@ public class MainSource extends javax.swing.JFrame {
             }
         });
 
+        jl_ingredientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_ingredientesMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(jl_ingredientes);
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -739,18 +760,18 @@ public class MainSource extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
+                        .addGap(134, 134, 134)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel40)
                             .addComponent(jLabel39))
                         .addGap(31, 31, 31)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_Precio, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                            .addComponent(tf_ingrecientes)))
+                            .addComponent(tf_Precio)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
+                        .addGap(269, 269, 269)
                         .addComponent(jButton6)))
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -762,10 +783,10 @@ public class MainSource extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel40)
-                    .addComponent(tf_ingrecientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addComponent(jButton6)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Baleadas", jPanel8);
@@ -1112,6 +1133,14 @@ public class MainSource extends javax.swing.JFrame {
         });
         pp_MenuGat.add(Eliminar5);
 
+        Agregar2.setText("Agregar Ingredientes");
+        Agregar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Agregar2ActionPerformed(evt);
+            }
+        });
+        pp_MenuIngr.add(Agregar2);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true)));
@@ -1203,14 +1232,29 @@ public class MainSource extends javax.swing.JFrame {
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Guardar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setText("Guardar Como");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("Salir");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
@@ -1270,7 +1314,16 @@ public class MainSource extends javax.swing.JFrame {
             TableFams.setModel(modelo);
             
             Familiares.add(new Familiar(edad, id, nacionalidad, lugar_nacimiento, nombre, colorpiel, new Familiar()));
+            JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
+            
+            tf_Edad.setText("");
+            tf_Id.setText("");
+            cb_Nacionalidad.setSelectedIndex(0);
+            tf_LugarNacimiento.setText("");
+            tf_Nombre.setText("");
         } catch (Exception e) {
+            e.getMessage();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -1311,7 +1364,21 @@ public class MainSource extends javax.swing.JFrame {
             raiz.add(nodo_persona);
             
             lista.add(new Empleado(secctr, hentrada, hsalidad, sueldo, estado, edad, id, nacionalidad, lugar_nacimiento, nombre, null, colorpiel));
+            JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
+            
+            tf_Edad1.setText("");
+            tf_Id1.setText("");
+            cb_Nacionalidad1.setSelectedIndex(0);
+            tf_LugarNacimiento1.setText("");
+            tf_Nombre1.setText("");
+            cb_SeccionTrabajo.setSelectedIndex(0);
+            tf_HoraEntrada.setText("");
+            tf_HoraSalida.setText("");
+            cb_Estado.setSelectedIndex(0);
+            tf_Sueldo.setText("");
         } catch (Exception e) {
+            e.getMessage();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -1351,7 +1418,17 @@ public class MainSource extends javax.swing.JFrame {
             raiz.add(nodo_persona);
             
             lista.add(new Jefes(secciontrab, clientesAtt, ganancia, edad, id, nacionalidad, lugar_nacimiento, nombre, null, colorpiel));
+            JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
+            
+            tf_Edad2.setText("");
+            tf_Id2.setText("");
+            cb_Nacionalidad2.setSelectedIndex(0);
+            tf_LugarNacimiento2.setText("");
+            tf_Nombre2.setText("");
+            cb_SeccionTrabajo1.setSelectedIndex(0);
         } catch (Exception e) {
+            e.getMessage();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -1390,7 +1467,18 @@ public class MainSource extends javax.swing.JFrame {
             raiz.add(nodo_persona);
             
             lista.add(new Clientes(ticket, dinero, edad, id, nacionalidad, lugar_nacimiento, nombre, null, colorpiel));
+            JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
+            
+            tf_Edad3.setText("");
+            tf_Id3.setText("");
+            cb_Nacionalidad3.setSelectedIndex(0);
+            tf_LugarNacimiento3.setText("");
+            tf_Nombre3.setText("");
+            tf_ticket.setText("");
+            tf_dinero.setText("");
         } catch (Exception e) {
+            e.getMessage();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -1403,11 +1491,8 @@ public class MainSource extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         double precio;
-        String ingredientes;
-        Baleadas b = new Baleadas();
         try {
             precio = Integer.parseInt(tf_Precio.getText());
-            ingredientes = tf_ingrecientes.getText();
             
             DefaultTableModel modelo = (DefaultTableModel) TableBaleadas.getModel();
             Object[] newrow = {ingredientes, precio};
@@ -1415,8 +1500,16 @@ public class MainSource extends javax.swing.JFrame {
             TableBaleadas.setModel(modelo);
             
             Baleadas.add(new Baleadas(precio));
-            b.setIngredientes(ingredientes);
+            JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
+            
+            tf_Edad.setText("");
+            tf_Id.setText("");
+            cb_Nacionalidad.setSelectedIndex(0);
+            tf_LugarNacimiento.setText("");
+            tf_Nombre.setText("");
         } catch (Exception e) {
+            e.getMessage();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -1433,7 +1526,10 @@ public class MainSource extends javax.swing.JFrame {
             TableGatos.setModel(modelo);
             
             Gatos.add(new Gatos(peso, altura, precio));
+            JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
         } catch (Exception e) {
+            e.getMessage();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -1509,7 +1605,79 @@ public class MainSource extends javax.swing.JFrame {
         TableGatos.setModel(modelo);
     }//GEN-LAST:event_Eliminar5ActionPerformed
 
+    private void jl_ingredientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_ingredientesMouseClicked
+        if (evt.isMetaDown()) {
+            pp_MenuIngr.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jl_ingredientesMouseClicked
+
+    private void Agregar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar2ActionPerformed
+        Baleadas b = new Baleadas();
+        int seleccion = JOptionPane.showConfirmDialog(this, "Agregar Ingredientes",
+                "Confirm",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if (seleccion == JOptionPane.OK_OPTION) {
+            ingredientes = JOptionPane.showInputDialog("Ingrese los Ingredientes del");
+            b.setIngredientes(ingredientes);
+            Ing.add(ingredientes);
+        }
+        refresh();
+    }//GEN-LAST:event_Agregar2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        AdminEmpleado ae = new AdminEmpleado("./Empleado.txt");
+        AdminJefes aj = new AdminJefes("./Jefes.txt");
+        AdminCliente ac = new AdminCliente("./Cliente.txt");
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i) instanceof Empleado) {
+                ae.cargarArchivo();
+                ae.setEmpleado(((Empleado)lista.get(i)));
+                ae.escribirArchivo();
+            }
+            if (lista.get(i) instanceof Jefes) {
+                aj.cargarArchivo();
+                aj.setJefes(((Jefes)lista.get(i)));
+                aj.escribirArchivo();
+            }
+            if (lista.get(i) instanceof Clientes) {
+                ac.cargarArchivo();
+                ac.setClientes(((Clientes)lista.get(i)));
+                ac.escribirArchivo();
+            }
+        }
+        AdminFamiliar af = new AdminFamiliar("./Familiar.txt");
+        for (int i = 0; i < Familiares.size(); i++) {
+            af.cargarArchivo();
+            af.setFamiliar(((Familiar)Familiares.get(i)));
+            af.escribirArchivo();
+        }
+        AdminBaleadas ab = new AdminBaleadas("./Baleadas.txt");
+        AdminGatos ag = new AdminGatos("./Gatos.txt");
+        for (int i = 0; i < Baleadas.size(); i++) {
+            ab.cargarArchivo();
+            ab.setBaleadas(((Baleadas)Baleadas.get(i)));
+            ab.escribirArchivo();
+        }
+        for (int i = 0; i < Gatos.size(); i++) {
+            ag.cargarArchivo();
+            ag.setGatos(((Gatos)Gatos.get(i)));
+            ag.escribirArchivo();
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        int saveResult = fileSelect.showSaveDialog(null);
+        if (saveResult == fileSelect.APPROVE_OPTION) {
+            saveFile(fileSelect.getSelectedFile());
+            this.jMenuItem2.setEnabled(true);
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1532,7 +1700,7 @@ public class MainSource extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainSource.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1543,6 +1711,7 @@ public class MainSource extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Agregar;
+    private javax.swing.JMenuItem Agregar2;
     private javax.swing.JDialog AgregarTodo;
     private javax.swing.JDialog Arbol;
     private javax.swing.JMenuItem Eliminar;
@@ -1649,11 +1818,13 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JList<String> jl_ingredientes;
     private javax.swing.JTree jt_Familiares;
     private javax.swing.JTree jt_Todo;
     private javax.swing.JPopupMenu pp_Menu;
@@ -1661,6 +1832,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JPopupMenu pp_MenuBal;
     private javax.swing.JPopupMenu pp_MenuFam;
     private javax.swing.JPopupMenu pp_MenuGat;
+    private javax.swing.JPopupMenu pp_MenuIngr;
     private javax.swing.JTextField tf_Edad;
     private javax.swing.JTextField tf_Edad1;
     private javax.swing.JTextField tf_Edad2;
@@ -1690,12 +1862,41 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JTextField tf_altura;
     private javax.swing.JTextField tf_clientesatt;
     private javax.swing.JTextField tf_dinero;
-    private javax.swing.JTextField tf_ingrecientes;
     private javax.swing.JTextField tf_peso;
     private javax.swing.JTextField tf_ticket;
     // End of variables declaration//GEN-END:variables
+    String ingredientes;
+    
     ArrayList lista = new ArrayList();
     ArrayList Baleadas = new ArrayList();
     ArrayList Gatos = new ArrayList();
     ArrayList Familiares = new ArrayList();
+    private JFileChooser fileSelect = new JFileChooser();
+    Document documento;
+    
+    public void saveFile(File archivo) {
+        FileOutputStream fw = null;
+        ObjectOutputStream bw = null;
+        try {
+            fw = new FileOutputStream(archivo);
+            bw = new ObjectOutputStream(fw);
+            bw.writeObject(documento);
+        } catch (Exception e) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception e) {
+            }
+        }
+    }
+    
+    public void refresh() {
+        DefaultListModel modelo = new DefaultListModel();
+        for (int i = 0; i < Ing.size(); i++) {
+            modelo.addElement(Ing.get(i).toString());
+        }
+        jl_ingredientes.setModel(modelo);
+    }
+    ArrayList Ing = new ArrayList();
 }
