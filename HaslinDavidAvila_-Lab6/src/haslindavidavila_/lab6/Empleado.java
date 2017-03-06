@@ -9,7 +9,7 @@ public class Empleado extends Persona{
     private String hora_salida;
     private double sueldo;
     private String estado;
-
+    
     public Empleado() {
         super();
     }
@@ -65,10 +65,7 @@ public class Empleado extends Persona{
 
     @Override
     public String toString() {
-        return super.toString() + "; " + seccion_trabajo + "; " + hora_entrada + "; " + hora_salida + "; " + sueldo + "; " + estado;
+        return super.toString() + "[ " + seccion_trabajo + "; " + hora_entrada + "; " + hora_salida + "; " + sueldo + "; " + estado + " ]";
     }
-
-    
-    
     
 }

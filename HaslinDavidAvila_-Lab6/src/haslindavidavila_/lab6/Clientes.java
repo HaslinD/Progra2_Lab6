@@ -49,7 +49,7 @@ public class Clientes extends Persona{
 
     @Override
     public String toString() {
-        return super.toString() + ", " + ticket + ", " + dinero;
+        return super.toString() + "[ " + ticket + ", " + dinero + " ]";
     }
     
     

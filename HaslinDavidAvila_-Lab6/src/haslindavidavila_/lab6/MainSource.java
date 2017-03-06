@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
@@ -143,6 +144,9 @@ public class MainSource extends javax.swing.JFrame {
         Arbol = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jt_Familiares = new javax.swing.JTree();
+        jLabel44 = new javax.swing.JLabel();
+        ComboNombres = new javax.swing.JComboBox<>();
+        jButton11 = new javax.swing.JButton();
         TablaDeObjetos = new javax.swing.JDialog();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel11 = new javax.swing.JPanel();
@@ -903,12 +907,28 @@ public class MainSource extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jt_Familiares);
 
+        jLabel44.setText("Nombre");
+
+        jButton11.setText("A G R E G A R");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ArbolLayout = new javax.swing.GroupLayout(Arbol.getContentPane());
         Arbol.getContentPane().setLayout(ArbolLayout);
         ArbolLayout.setHorizontalGroup(
             ArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ArbolLayout.createSequentialGroup()
-                .addContainerGap(191, Short.MAX_VALUE)
+                .addGap(14, 14, 14)
+                .addGroup(ArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ComboNombres, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(ArbolLayout.createSequentialGroup()
+                        .addComponent(jLabel44)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
@@ -916,7 +936,14 @@ public class MainSource extends javax.swing.JFrame {
             ArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ArbolLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(ArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ArbolLayout.createSequentialGroup()
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ComboNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton11))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -1166,6 +1193,11 @@ public class MainSource extends javax.swing.JFrame {
         jPanel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 102), 3, true));
 
         jButton8.setText("Arbol Familiares");
+        jButton8.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jButton8StateChanged(evt);
+            }
+        });
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -1384,6 +1416,7 @@ public class MainSource extends javax.swing.JFrame {
             cb_Nacionalidad.setSelectedIndex(0);
             tf_LugarNacimiento.setText("");
             tf_Nombre.setText("");
+            tf_Familiar.setText("");
         } catch (Exception e) {
             e.getMessage();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
@@ -1439,6 +1472,7 @@ public class MainSource extends javax.swing.JFrame {
             tf_HoraSalida.setText("");
             cb_Estado.setSelectedIndex(0);
             tf_Sueldo.setText("");
+            tf_Familiar1.setText("");
         } catch (Exception e) {
             e.getMessage();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
@@ -1489,6 +1523,7 @@ public class MainSource extends javax.swing.JFrame {
             tf_LugarNacimiento2.setText("");
             tf_Nombre2.setText("");
             cb_SeccionTrabajo1.setSelectedIndex(0);
+            tf_Familiar2.setText("");
         } catch (Exception e) {
             e.getMessage();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
@@ -1539,6 +1574,7 @@ public class MainSource extends javax.swing.JFrame {
             tf_Nombre3.setText("");
             tf_ticket.setText("");
             tf_dinero.setText("");
+            tf_Familiar3.setText("");
         } catch (Exception e) {
             e.getMessage();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
@@ -1554,6 +1590,7 @@ public class MainSource extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         double precio;
+        DefaultListModel model = new DefaultListModel();
         try {
             precio = Integer.parseInt(tf_Precio.getText());
             
@@ -1565,11 +1602,8 @@ public class MainSource extends javax.swing.JFrame {
             Baleadas.add(new Baleadas(precio));
             JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
             
-            tf_Edad.setText("");
-            tf_Id.setText("");
-            cb_Nacionalidad.setSelectedIndex(0);
-            tf_LugarNacimiento.setText("");
-            tf_Nombre.setText("");
+            tf_Precio.setText("");
+            jl_ingredientes.setModel(model);
         } catch (Exception e) {
             e.getMessage();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
@@ -1590,6 +1624,10 @@ public class MainSource extends javax.swing.JFrame {
             
             Gatos.add(new Gatos(peso, altura, precio));
             JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
+            
+            tf_Precio1.setText("");
+            tf_altura.setText("");
+            tf_peso.setText("");
         } catch (Exception e) {
             e.getMessage();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar su informacion");
@@ -1820,10 +1858,8 @@ public class MainSource extends javax.swing.JFrame {
                 File arch = fc.getSelectedFile();
                 fw = new FileWriter(arch);
                 bw = new BufferedWriter(fw);
-                for (int i = 0; i < lista.size(); i++) {
-                    if (lista.get(i) instanceof Familiar) {
-                        bw.write(Familiares.get(i).toString());
-                    }
+                for (int i = 0; i < Familiares.size(); i++) {
+                    bw.write(Familiares.get(i).toString());
                 }
             } catch (Exception e) {
             } finally {
@@ -1846,10 +1882,8 @@ public class MainSource extends javax.swing.JFrame {
                 File arch = fc.getSelectedFile();
                 fw = new FileWriter(arch);
                 bw = new BufferedWriter(fw);
-                for (int i = 0; i < lista.size(); i++) {
-                    if (lista.get(i) instanceof Baleadas) {
-                        bw.write(Baleadas.get(i).toString());
-                    }
+                for (int i = 0; i < Baleadas.size(); i++) {
+                    bw.write(Baleadas.get(i).toString());
                 }
             } catch (Exception e) {
             } finally {
@@ -1872,10 +1906,8 @@ public class MainSource extends javax.swing.JFrame {
                 File arch = fc.getSelectedFile();
                 fw = new FileWriter(arch);
                 bw = new BufferedWriter(fw);
-                for (int i = 0; i < lista.size(); i++) {
-                    if (lista.get(i) instanceof Gatos) {
-                        bw.write(Gatos.get(i).toString());
-                    }
+                for (int i = 0; i < Gatos.size(); i++) {
+                    bw.write(Gatos.get(i).toString());
                 }
             } catch (Exception e) {
             } finally {
@@ -1887,6 +1919,29 @@ public class MainSource extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jButton8StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton8StateChanged
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < Familiares.size(); i++) {
+            modelo.addElement(((Familiar)Familiares.get(i)).getNombre());
+        }
+        ComboNombres.setModel(modelo);
+    }//GEN-LAST:event_jButton8StateChanged
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        if (ComboNombres.getSelectedIndex() >= 0) {
+            DefaultTreeModel m = (DefaultTreeModel)jtr_.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+            DefaultMutableTreeNode category;
+            category = new DefaultMutableTreeNode(categoria);
+            DefaultMutableTreeNode name;
+            name = new DefaultMutableTreeNode(nombre);
+            nodotipo.add(category);
+            category.add(name);
+            raiz.add(category);
+            m.reload();
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     public static void main(String args[]) {
         
@@ -1926,6 +1981,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JMenuItem Agregar2;
     private javax.swing.JDialog AgregarTodo;
     private javax.swing.JDialog Arbol;
+    private javax.swing.JComboBox<String> ComboNombres;
     private javax.swing.JMenuItem Eliminar;
     private javax.swing.JMenuItem Eliminar2;
     private javax.swing.JMenuItem Eliminar3;
@@ -1951,6 +2007,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_SeccionTrabajo1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1997,6 +2054,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
