@@ -11,13 +11,13 @@ public class Familiar {
     private String lugar_nacimiento;
     private String nombre;
     private Color color_piel;
-    private Familiar fam_padre;
+    private String fam_padre;
     private ArrayList<Familiar> lista_hijos = new ArrayList();
 
     public Familiar() {
     }
 
-    public Familiar(int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, Color color_piel, Familiar fam_padre) {
+    public Familiar(int edad, int id, String nacionalidad, String lugar_nacimiento, String nombre, Color color_piel, String fam_padre) {
         this.edad = edad;
         this.id = id;
         this.nacionalidad = nacionalidad;
@@ -75,11 +75,11 @@ public class Familiar {
         this.color_piel = color_piel;
     }
 
-    public Familiar getFam_padre() {
+    public String getFam_padre() {
         return fam_padre;
     }
 
-    public void setFam_padre(Familiar fam_padre) {
+    public void setFam_padre(String fam_padre) {
         this.fam_padre = fam_padre;
     }
 

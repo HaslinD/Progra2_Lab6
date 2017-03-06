@@ -172,6 +172,9 @@ public class MainSource extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         TableGatos = new javax.swing.JTable();
+        jPanel24 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        TableBorrados = new javax.swing.JTable();
         jLabel45 = new javax.swing.JLabel();
         pp_Menu = new javax.swing.JPopupMenu();
         Eliminar = new javax.swing.JMenuItem();
@@ -1307,7 +1310,42 @@ public class MainSource extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("Tabla Articulos", jPanel13);
 
+        TableBorrados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "ID", "Nacionalidad"
+            }
+        ));
+        TableBorrados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableBorradosMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(TableBorrados);
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane4.addTab("Tabla de Borrados(Personas)", jPanel24);
+
         jLabel45.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(102, 0, 153));
         jLabel45.setText("Tablas De Objetos");
 
         javax.swing.GroupLayout TablaDeObjetosLayout = new javax.swing.GroupLayout(TablaDeObjetos.getContentPane());
@@ -1755,7 +1793,7 @@ public class MainSource extends javax.swing.JFrame {
         int edad, id;
         String nacionalidad, lugar_nacimiento, nombre;
         Color colorpiel;
-        Object pdr;
+        String fam;
         try {
             edad = Integer.parseInt(tf_Edad.getText());
             id = Integer.parseInt(tf_Id.getText());
@@ -1763,14 +1801,14 @@ public class MainSource extends javax.swing.JFrame {
             lugar_nacimiento = tf_LugarNacimiento.getText();
             nombre = tf_Nombre.getText();
             colorpiel = botonColor.getBackground();
-            pdr = tf_Familiar.getText();
+            fam = tf_Familiar.getText();
             
             DefaultTableModel modelo = (DefaultTableModel) TableFams.getModel();
             Object[] newrow = {nombre, edad, id, nacionalidad};
             modelo.addRow(newrow);
             TableFams.setModel(modelo);
             
-            Familiares.add(new Familiar(edad, id, nacionalidad, lugar_nacimiento, nombre, colorpiel, (Familiar)pdr));
+            Familiares.add(new Familiar(edad, id, nacionalidad, lugar_nacimiento, nombre, colorpiel, fam));
             JOptionPane.showMessageDialog(null, "Su Informacion Ha sido Guardada Exitosamente");
             
             tf_Edad.setText("");
@@ -2016,7 +2054,8 @@ public class MainSource extends javax.swing.JFrame {
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         DefaultTableModel modelo = (DefaultTableModel) TablePersonas.getModel();
         modelo.removeRow(TablePersonas.getSelectedRow());
-        lista.remove(TablePersonas.getSelectedRowCount());
+        int pts = TablePersonas.getSelectedRowCount();
+        lista.remove(pts);
         TablePersonas.setModel(modelo);
     }//GEN-LAST:event_EliminarActionPerformed
 
@@ -2049,7 +2088,8 @@ public class MainSource extends javax.swing.JFrame {
     private void Eliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar3ActionPerformed
         DefaultTableModel modelo = (DefaultTableModel) TableFams.getModel();
         modelo.removeRow(TableFams.getSelectedRow());
-        Familiares.remove(TableFams.getSelectedRowCount());
+        int ptse = TableFams.getSelectedRowCount();
+        Familiares.remove(ptse);
         TableFams.setModel(modelo);
     }//GEN-LAST:event_Eliminar3ActionPerformed
 
@@ -2404,6 +2444,10 @@ public class MainSource extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
+    private void TableBorradosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableBorradosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TableBorradosMouseClicked
+
     public static void main(String args[]) {
         
         /* Set the Nimbus look and feel */
@@ -2454,6 +2498,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JDialog Principal;
     private javax.swing.JDialog TablaDeObjetos;
     private javax.swing.JTable TableBaleadas;
+    private javax.swing.JTable TableBorrados;
     private javax.swing.JTable TableFams;
     private javax.swing.JTable TableGatos;
     private javax.swing.JTable TablePersonas;
@@ -2569,6 +2614,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -2583,6 +2629,7 @@ public class MainSource extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
