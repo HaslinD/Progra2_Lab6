@@ -344,13 +344,13 @@
                                                           <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
+                                                          <Group type="102" attributes="0">
                                                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                                               <Component id="botonColor1" min="-2" pref="107" max="-2" attributes="0"/>
                                                           </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
+                                                          <Group type="102" attributes="0">
                                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="tf_Familiar1" min="-2" pref="160" max="-2" attributes="0"/>
+                                                              <Component id="bt_Family" max="32767" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
@@ -409,7 +409,7 @@
                                       <Component id="cb_Nacionalidad1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tf_Familiar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bt_Family" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -437,7 +437,7 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButton3" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                                  <EmptySpace pref="16" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -512,8 +512,6 @@
                             <Property name="text" type="java.lang.String" value="Padre"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="tf_Familiar1">
-                        </Component>
                         <Component class="javax.swing.JLabel" name="jLabel15">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seccion Trabajo"/>
@@ -580,6 +578,14 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JButton" name="bt_Family">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Agregar Familiar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_FamilyActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel6">
@@ -632,24 +638,25 @@
                                                       <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
                                                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                                           <Component id="botonColor2" min="-2" pref="107" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
                                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="tf_Familiar2" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="bt_Family1" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
                                           </Group>
+                                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jButton4" min="-2" pref="150" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                                  <EmptySpace pref="23" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -675,14 +682,14 @@
                                       <Component id="cb_Nacionalidad2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tf_Familiar2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bt_Family1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="tf_LugarNacimiento2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cb_SeccionTrabajo1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -767,8 +774,6 @@
                             <Property name="text" type="java.lang.String" value="Padre"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="tf_Familiar2">
-                        </Component>
                         <Component class="javax.swing.JLabel" name="jLabel26">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Lugar de Nacimiento"/>
@@ -823,6 +828,14 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JButton" name="bt_Family1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Agregar Familiar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Family1ActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel7">
@@ -873,13 +886,13 @@
                                                       <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
                                                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                                           <Component id="botonColor3" min="-2" pref="107" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="0" attributes="0">
                                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="tf_Familiar3" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="bt_Family2" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -916,7 +929,7 @@
                                       <Component id="cb_Nacionalidad3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tf_Familiar3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bt_Family2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -935,7 +948,7 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                                  <EmptySpace pref="62" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1003,8 +1016,6 @@
                             <Property name="text" type="java.lang.String" value="Padre"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="tf_Familiar3">
-                        </Component>
                         <Component class="javax.swing.JLabel" name="jLabel36">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Lugar de Nacimiento"/>
@@ -1032,6 +1043,14 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="bt_Family2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Agregar Familiar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Family2ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1286,6 +1305,11 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="Arbol">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="99" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1336,7 +1360,7 @@
             <Component class="javax.swing.JTree" name="jt_Familiares">
               <Properties>
                 <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-                  <TreeModel code="Raiz"/>
+                  <TreeModel code="Arbol Genealogico"/>
                 </Property>
               </Properties>
               <Events>
@@ -1594,8 +1618,8 @@
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="2" rowCount="0">
-                                    <Column editable="true" title="Edad" type="java.lang.Object"/>
                                     <Column editable="true" title="Precio" type="java.lang.Object"/>
+                                    <Column editable="true" title="Ingredientes" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                               </Properties>

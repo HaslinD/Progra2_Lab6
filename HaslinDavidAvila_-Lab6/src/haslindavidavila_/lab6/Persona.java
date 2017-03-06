@@ -90,7 +90,11 @@ public class Persona {
     public void setFamiliar(ArrayList<Familiar> familiar) {
         this.familiar = familiar;
     }
-
+    
+    public void setFam(Familiar f){
+        familiar.add(f);
+    }
+    
     @Override
     public String toString() {
         return nombre + ", " + id + ", " + nacionalidad + ", " + lugar_nacimiento + ", " + edad + ", " + Color_piel;

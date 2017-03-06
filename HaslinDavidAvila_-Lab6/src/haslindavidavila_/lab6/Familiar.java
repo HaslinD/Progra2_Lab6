@@ -99,8 +99,4 @@ public class Familiar {
     public String toString() {
         return nombre + ", " + id + ", " + nacionalidad + ", " + lugar_nacimiento + ", " + edad + ", " + color_piel;
     }
-    
-    
-    
-    
 }
